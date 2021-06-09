@@ -1,0 +1,25 @@
+import React from "react";
+import SideNav from "react-simple-sidenav";
+import SideNavItems from './sidenav_items'
+
+const SideNavigation = (props) => {
+  return (
+    <div>
+      <SideNav
+        showNav={props.showNav}
+        onHideNav={props.onHideNav}
+        navStyle={{
+          background: "#242424",
+          maxWidth: "220px",
+        }}
+        titleStyle={{ backgroundColor: "#242424" }}
+        itemStyle={{ backgroundColor: "#fff" }}
+        itemHoverStyle={{ backgroundColor: "#CDDC39" }}
+      >
+          <SideNavItems />
+      </SideNav>
+    </div>
+  );
+};
+
+export default SideNavigation;
