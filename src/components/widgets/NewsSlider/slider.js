@@ -3,7 +3,6 @@ import axios from 'axios'
 import SliderTemplates from './slider_templates'
 import { URL } from '../../../config'
 
-
 class NewsSlider extends Component {
      
     state = {
