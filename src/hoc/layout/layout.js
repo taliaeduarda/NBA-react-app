@@ -1,34 +1,23 @@
-import React, { Component } from 'react'
-import './layout.css'
+import React, { useState } from "react";
+import "./layout.css";
+import Header from "../../Components/Header/Header";
+import Footer from '../../Components/Footer/Footer'
 
-import Header from '../../components/Header/header'
-import Footer from '../../components/Footer/footer'
+export default function Layout(props) {
 
-class Layout extends Component {
+  const [sidebar, setSidebar] = useState(false);
 
-    state = {
-        showNav: false
-    }
-
-    toggleSidenav = (action) => {
-        this.setState({
-            showNav:action
-        })
-    }
-
-    render() {
-        return (
-            <div>
-                <Header 
-                    showNav={this.state.showNav}
-                    onHideNav={() => this.toggleSidenav(false)}
-                    onOpenNav={() => this.toggleSidenav(true)}
-                />
-               {this.props.children}
-               <Footer />
-            </div>
-        )
-    }
+  function openSidebar() {
+    setSidebar(!sidebar);
+  }
+  return (
+    <>
+      <Header
+        showNav={sidebar}
+        onHideNav={openSidebar}
+      />
+      {props.children}
+     <Footer/>
+    </>
+  );
 }
-
-export default Layout;

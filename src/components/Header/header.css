@@ -3,7 +3,7 @@
     border-bottom: 1px solid #000000;
 }
 
-.headerOpt {
+.header__options {
     display: flex;
 }
 
@@ -16,8 +16,9 @@
     width: 35px;
 }
 
-.bars {
+.navbars {
     color: white; 
     padding: 10px;
     cursor: pointer;
 }
+
